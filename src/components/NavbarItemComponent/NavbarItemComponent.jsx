@@ -1,8 +1,12 @@
 import { motion } from 'framer-motion';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { setCurrentPage } from '../../redux/actions';
 
 // eslint-disable-next-line react/prop-types
 function NavbarItemComponent({ item, isOpen }) {
+  const dispatch = useDispatch();
+
   const navItem = {
     visible: {
       y: 0,
@@ -25,6 +29,7 @@ function NavbarItemComponent({ item, isOpen }) {
       <motion.li className="w-auto h-full" variants={navItem}>
         <Link
           to={item.href}
+          onClick={() => dispatch(setCurrentPage(item.name))}
           className={`
             w-full h-full text-left px-3 py-3
             text-on-surface hover:opacity-70 inline-block

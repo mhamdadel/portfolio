@@ -1,21 +1,17 @@
 export const actions = {
-    ADD_TASK: "ADD_TASK",
-    DELETE_TASK: "DELETE_TASK",
+    SET_CURRENT_PAGE: "SET_CURRENT_PAGE",
+    SET_MENU_ITEMS: "SET_MENU_ITEMS",
 }
 
-export const addTodo = (text) => {
+export const setCurrentPage = (currentPage) => {
     return {
-      type: "ADD_TASK",
-      payload: {
-        id: new Date().getTime(),
-        text: text,
-      },
+      type: actions.SET_CURRENT_PAGE,
+      payload: currentPage,
     };
   };
+
+export const setMenuItems = (menuItems) => ({
+    type: actions.SET_MENU_ITEMS,
+    payload: menuItems
+})
   
-  export const deleteTodo = (id) => {
-    return {
-      type: "DELETE_TASK",
-      payload: id,
-    };
-  };

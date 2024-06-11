@@ -1,6 +1,6 @@
-p {
+.typed-line-coponent p {
   position: relative;
-  margin-left: -8.5em;
+  /* margin-left: -8.5em; */
   text-align: left;
   font-size: 1.25em;
   font-family: monospace;
@@ -11,13 +11,13 @@ p {
   display: inline-block;
 }
 
-span {
+.typed-line-coponent span {
   color: #000000;
   font-weight: bold;
   display: inline-block;
 }
 
-.line {
+.typed-line-coponent .line {
   color: #9cd9f0;
   -webkit-animation: type 0.5s 0.5s steps(20, end) forwards;
   -moz-animation: type 0.5s 0.5s steps(20, end) forwards;
@@ -25,7 +25,8 @@ span {
   animation: type 0.5s 0.5s steps(20, end) forwards;
 }
 
-.cursor {
+.typed-line-coponent .cursor {
+  color: var(--surface-color);
   display: inline-block;
   -webkit-animation: blink 0.5s .5s infinite;
   -moz-animation: blink 0.5s .5s infinite;
@@ -107,24 +108,24 @@ span {
 
 @-webkit-keyframes type {
   to {
-    width: 22em;
+    width: 25em;
   }
 }
 
 @-moz-keyframes type {
   to {
-    width: 22em;
+    width: 25em;
   }
 }
 
 @-o-keyframes type {
   to {
-    width: 22em;
+    width: 25em;
   }
 }
 
 @keyframes type {
   to {
-    width: 22em;
+    width: 25em;
   }
 }

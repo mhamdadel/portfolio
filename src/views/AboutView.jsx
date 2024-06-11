@@ -16,24 +16,7 @@ const itemVariants = {
 };
 
 export default function AboutView() {
-  // eslint-disable-next-line no-unused-vars
-  const [scrollDirection, setScrollDirection] = useState("up");
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      if (currentScrollY > 0) {
-        setScrollDirection("down");
-      } else {
-        setScrollDirection("up");
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
+  
   return (
     <motion.main
       className="mx-auto p-5 bg-surface text-on-surface flex flex-col"
@@ -61,10 +44,7 @@ export default function AboutView() {
           <motion.h3 variants={itemVariants} className="text-on-surface text-2xl pb-5">
             Muhammed Adel Hamed
           </motion.h3>
-          <motion.p
-            variants={itemVariants}
-            className={`text-on-surface text-3xl`}
-          >
+          <motion.p variants={itemVariants} className="text-on-surface text-2xl pb-5">
             It is important for me to fully immerse myself in the specifics of
             each client's work and business processes. I am not afraid to ask
             hundreds of clarifying questions to ensure that I correctly

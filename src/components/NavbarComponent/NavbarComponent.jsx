@@ -1,18 +1,12 @@
-import  { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchCurrentTemperature } from '../../redux/actions/weatherActions';
-import { useState } from 'react';
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchCurrentTemperature } from "../../redux/actions/weatherActions";
+import { useState } from "react";
 import ChangeThemeButtonComponent from "../../components/ChangeThemeButton/ChangeThemeButtonComponent";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { motion, AnimatePresence } from "framer-motion";
 import NavbarItemComponent from "../../components/NavbarItemComponent/NavbarItemComponent";
-
-const navigation = [
-  { name: "About Me", href: "/", current: true },
-  { name: "Portfolio", href: "/portfolio", current: false },
-  { name: "Projects", href: "#", current: false },
-  { name: "Calendar", href: "#", current: false },
-];
+import { setMenuItems } from "../../redux/actions";
 
 const navContainer = {
   visible: {
@@ -31,14 +25,25 @@ const navContainer = {
 
 export default function NavbarComponent() {
   const dispatch = useDispatch();
-  const temperature = useSelector((state) => state.menu.menu.temperature);
-  const loading = useSelector((state) => state.menu.menu.loading);
-  const error = useSelector((state) => state.menu.menu.error);
+  const menuItems = useSelector((state) => state.menu.menuItems);
+  const temperature = useSelector((state) => state.weather.temperature);
+  const currentPage = useSelector((state) => state.menu.currentPage);
+  console.log(currentPage)
+  const loading = useSelector((state) => state.weather.loading);
+  const error = useSelector((state) => state.weather.error);
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     dispatch(fetchCurrentTemperature());
   }, [dispatch]);
+  useEffect(() => {
+    const navItems = menuItems.map((item) => ({
+      ...item,
+      current: item.name === currentPage,
+    }))
+    console.log(navItems)
+    dispatch(setMenuItems(navItems));
+  }, [currentPage]);
 
   return (
     <nav className="bg-surface sticky top-0 mb-5 text-on-surface h-12 flex justify-between items-center px-4">
@@ -56,7 +61,7 @@ export default function NavbarComponent() {
           </button>
         </div>
         <ul className="hidden lg:flex h-full">
-          {navigation.map((item) => (
+          {menuItems.map((item) => (
             <NavbarItemComponent key={item.name} isOpen={!isOpen} item={item} />
           ))}
         </ul>
@@ -84,8 +89,12 @@ export default function NavbarComponent() {
               exit="hidden"
               variants={navContainer}
             >
-              {navigation.map((item) => (
-                <NavbarItemComponent key={item.name} isOpen={isOpen} item={item} />
+              {menuItems.map((item) => (
+                <NavbarItemComponent
+                  key={item.name}
+                  isOpen={isOpen}
+                  item={item}
+                />
               ))}
             </motion.ul>
           </motion.div>

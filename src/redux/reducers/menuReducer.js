@@ -1,30 +1,41 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { fetchCurrentTemperature } from '../actions/weatherActions';
-
+import { createSlice } from "@reduxjs/toolkit";
+import { actions } from "../actions";
+const getCurrentPage = () => {
+  const path = window.location.pathname;
+  switch (path) {
+    case "/":
+      return "About Me";
+    case "/portfolio":
+      return "Portfolio";
+    case "/projects":
+      return "Projects";
+    case "/calendar":
+      return "Calendar";
+    default:
+      return "About Me"; // Default to "About Me" if no match is found
+  }
+};
 const initialState = {
-  currentPage: null,
-  temperature: null,
-  loading: false,
-  error: null,
+  currentPage: getCurrentPage(),
+  menuItems: [
+    { name: "About Me", href: "/", current: true },
+    { name: "Portfolio", href: "/portfolio", current: false },
+    { name: "Projects", href: "#", current: false },
+    { name: "Calendar", href: "#", current: false },
+  ],
 };
 
 const weatherSlice = createSlice({
-  name: 'weather',
+  name: "menu",
   initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(fetchCurrentTemperature.pending, (state) => {
-        state.loading = true;
-        state.error = null;
+      .addCase(actions.SET_CURRENT_PAGE, (state, action) => {
+        state.currentPage = action.payload;
       })
-      .addCase(fetchCurrentTemperature.fulfilled, (state, action) => {
-        state.loading = false;
-        state.temperature = action.payload;
-      })
-      .addCase(fetchCurrentTemperature.rejected, (state, action) => {
-        state.loading = false;
-        state.error = action.payload;
+      .addCase(actions.SET_MENU_ITEMS, (state, action) => {
+        state.menuItems = action.payload;
       });
   },
 });
