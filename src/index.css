@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #6200ee;
+  --primary-variant-color: #3700b3;
+  --secondary-color: #03dac6;
+  --secondary-variant-color: #018786;
+  --accent-color: #ff4081;
+  --background-color: #ffffff;
+  --surface-color: #f5f5f5;
+  --error-color: #b00020;
+  --warning-color: #ffab00;
+  --success-color: #4caf50;
+  --info-color: #2196f3;
+  --on-primary-color: #ffffff;
+  --on-secondary-color: #000000;
+  --on-accent-color: #000000;
+  --on-surface-color: #000000;
+  --on-error-color: #ffffff;
+  --on-warning-color: #000000;
+  --on-success-color: #ffffff;
+  --on-info-color: #ffffff;
+  --text-color: #000000;
+  overflow-y: auto;
+}
+
+* {
+  @apply transition-colors duration-500;
+}
+
+/* Define your variables for the dark theme */
+.dark {
+  --primary-color: #bb86fc;
+  --primary-variant-color: #3700b3;
+  --secondary-color: #03dac6;
+  --secondary-variant-color: #03dac6;
+  --accent-color: #ff4081;
+  --background-color: black;
+  --surface-color: #121212;
+  --error-color: #cf6679;
+  --warning-color: #ffab00;
+  --success-color: #4caf50;
+  --info-color: #2196f3;
+  --on-primary-color: #000000;
+  --on-secondary-color: #000000;
+  --on-accent-color: #000000;
+  --on-surface-color: #ffffff;
+  --on-error-color: #000000;
+  --on-warning-color: #000000;
+  --on-success-color: #000000;
+  --on-info-color: #000000;
+  --text-color: #ffffff;
+}
+
+body, h1, p {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+/* Base styles */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--background-color);
+}
+
+h1 {
+  color: #444;
+}
+
+p {
+  margin: 10px 0;
+}

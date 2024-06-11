@@ -1,0 +1,130 @@
+p {
+  position: relative;
+  margin-left: -8.5em;
+  text-align: left;
+  font-size: 1.25em;
+  font-family: monospace;
+  white-space: normal;
+  overflow: hidden;
+  width: 0;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+span {
+  color: #000000;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.line {
+  color: #9cd9f0;
+  -webkit-animation: type 0.5s 0.5s steps(20, end) forwards;
+  -moz-animation: type 0.5s 0.5s steps(20, end) forwards;
+  -o-animation: type 0.5s 0.5s steps(20, end) forwards;
+  animation: type 0.5s 0.5s steps(20, end) forwards;
+}
+
+.cursor {
+  display: inline-block;
+  -webkit-animation: blink 0.5s .5s infinite;
+  -moz-animation: blink 0.5s .5s infinite;
+  -o-animation: blink 0.5s .5s infinite;
+  animation: blink 0.5s .5s infinite;
+}
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-moz-keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-o-keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes type {
+  to {
+    width: 22em;
+  }
+}
+
+@-moz-keyframes type {
+  to {
+    width: 22em;
+  }
+}
+
+@-o-keyframes type {
+  to {
+    width: 22em;
+  }
+}
+
+@keyframes type {
+  to {
+    width: 22em;
+  }
+}
