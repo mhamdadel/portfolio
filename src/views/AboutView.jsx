@@ -16,6 +16,7 @@ const itemVariants = {
 };
 
 export default function AboutView() {
+  // eslint-disable-next-line no-unused-vars
   const [scrollDirection, setScrollDirection] = useState("up");
 
   useEffect(() => {
@@ -45,29 +46,24 @@ export default function AboutView() {
         <ViewTitleComponent title="About Me" />
       </motion.div>
       <article className="flex flex-col lg:flex-row my-10">
-        <div className="w-full min-h-screen lg:w-1/3 h-auto flex justify-center">
+        <div className="w-full lg:w-1/3 h-auto flex justify-center">
           <motion.img
-            src="https://avatars.githubusercontent.com/u/102244314?v=4"
+            src="https://images.pexels.com/photos/3748221/pexels-photo-3748221.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             alt="Muhammed Adel"
             className="w-full p-5 h-auto my-10 lg:my-0"
-            style={{
-              maxHeight: "65%",
-            }}
             variants={itemVariants}
           />
         </div>
         <div className="w-full lg:w-2/3 p-5 text-container">
-          <motion.h2 variants={itemVariants} className="text-primary-variant text-2xl">
+          <motion.h2 variants={itemVariants} className="text-primary text-2xl">
             My story
           </motion.h2>
-          <motion.h3 variants={itemVariants} className="text-primary text-2xl pb-5">
+          <motion.h3 variants={itemVariants} className="text-on-surface text-2xl pb-5">
             Muhammed Adel Hamed
           </motion.h3>
           <motion.p
             variants={itemVariants}
-            className={`text-on-surface text-3xl ${
-              scrollDirection === "down" ? "line-hidden" : ""
-            }`}
+            className={`text-on-surface text-3xl`}
           >
             It is important for me to fully immerse myself in the specifics of
             each client's work and business processes. I am not afraid to ask

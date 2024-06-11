@@ -4,12 +4,14 @@
 import AboutView from './views/AboutView'
 import './App.css'
 import NavbarComponent from './components/NavbarComponent/NavbarComponent'
+import StarfieldBackgroundComponent from './components/StarfieldBackgroundComponent/StarfieldBackgroundComponent'
 
 function App() {
   return (
     <div style={{
       boxSizing: "content-box",
     }}>
+      <StarfieldBackgroundComponent />
       <NavbarComponent />
       {/* <LoadingComponent /> */}
       {/* <TypedLineComponent textColor={"red"}

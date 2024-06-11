@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 // eslint-disable-next-line react/prop-types
 function NavbarItemComponent({ item, isOpen }) {
@@ -21,25 +22,21 @@ function NavbarItemComponent({ item, isOpen }) {
 
   return (
     isOpen && (
-      <motion.li
-        className="w-full h-full"
-        variants={navItem}
-      >
-        <motion.a
-          href={item.href}
+      <motion.li className="w-auto h-full" variants={navItem}>
+        <Link
+          to={item.href}
           className={`
-          w-full h-full text-left px-3 py-3
-          text-on-surface hover:opacity-70 inline-block
-          ${
-            item.current
-              ? "font-bold bg-primary text-on-primary"
-              : "font-normal hover:border-b-2 hover:border-primary hover:border-opacity-70 hover:text-opacity-70"
-          }
-        `}
-          variants={navItem}
+            w-full h-full text-left px-3 py-3
+            text-on-surface hover:opacity-70 inline-block
+            ${
+              item.current
+                ? 'font-bold bg-primary text-on-primary'
+                : 'font-normal hover:border-b-2 hover:border-primary hover:border-opacity-70 hover:text-opacity-70'
+            }
+          `}
         >
           {item.name}
-        </motion.a>
+        </Link>
       </motion.li>
     )
   );

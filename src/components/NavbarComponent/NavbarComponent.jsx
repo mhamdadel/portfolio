@@ -8,8 +8,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import NavbarItemComponent from "../../components/NavbarItemComponent/NavbarItemComponent";
 
 const navigation = [
-  { name: "Dashboard", href: "#", current: true },
-  { name: "Team", href: "#", current: false },
+  { name: "About Me", href: "/", current: true },
+  { name: "Portfolio", href: "/portfolio", current: false },
   { name: "Projects", href: "#", current: false },
   { name: "Calendar", href: "#", current: false },
 ];
@@ -41,7 +41,7 @@ export default function NavbarComponent() {
   }, [dispatch]);
 
   return (
-    <nav className="bg-surface mb-5 text-on-surface h-12 flex justify-between items-center px-4">
+    <nav className="bg-surface sticky top-0 mb-5 text-on-surface h-12 flex justify-between items-center px-4">
       <div className="flex items-center space-x-4 h-full">
         <div className="flex lg:hidden">
           <button
@@ -55,7 +55,7 @@ export default function NavbarComponent() {
             )}
           </button>
         </div>
-        <ul className="hidden lg:flex space-x-4 h-full">
+        <ul className="hidden lg:flex h-full">
           {navigation.map((item) => (
             <NavbarItemComponent key={item.name} isOpen={!isOpen} item={item} />
           ))}
