@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { toast } from "react-toastify";
 import "./FooterComponent.css";
 
@@ -38,7 +38,7 @@ const FooterComponent = () => {
 
   const handleMouseLeave = (e) => {
     e.preventDefault();
-    e.target.style.transform = "";
+    // e.target.style.transform = "";
   };
 
   return (
@@ -103,7 +103,7 @@ const FooterComponent = () => {
               </div>
               <button
                 type="submit"
-                className="w-2/4 mx-44 bg-primary text-on-primary py-2 px-4 rounded-md hover:bg-primary-variant"
+                className="w-2/4 mx-44 bg-primary text-on-primary py-2 px-4 rounded-md hover:bg-error"
                 onMouseMove={handleMouseMove}
                 onMouseLeave={handleMouseLeave}
               >

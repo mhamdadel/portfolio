@@ -3,8 +3,8 @@ import ViewTitleComponent from "../components/ViewTitleComponent/ViewTitleCompon
 import personalPhotoImage from "../assets/personal-photo.png";
 import SEOHelmet from "../utils/SEOHelmet";
 import "react-toastify/dist/ReactToastify.min.css";
-import Joke from "../utils/Joke";
-import Adkar from "../utils/adkar";
+// import Joke from "../utils/Joke";
+// import Adkar from "../utils/adkar";
 
 const containerVariants = {
   hidden: { opacity: 0 },

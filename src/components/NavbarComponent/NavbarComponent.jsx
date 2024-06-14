@@ -26,9 +26,9 @@ const navContainer = {
 export default function NavbarComponent() {
   const dispatch = useDispatch();
   const menuItems = useSelector((state) => state.menu.menuItems);
-  const temperature = useSelector((state) => state.weather.temperature);
-  const loading = useSelector((state) => state.weather.loading);
-  const error = useSelector((state) => state.weather.error);
+  // const temperature = useSelector((state) => state.weather.temperature);
+  // const loading = useSelector((state) => state.weather.loading);
+  // const error = useSelector((state) => state.weather.error);
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
