@@ -9,7 +9,7 @@ const EyeContainer = styled.div`
   background-color: white;
   box-shadow: inset 0 0 60px 0 rgba(0, 0, 0, 0.5);
   border-radius: 100%;
-  position: absolute;
+  position: block;
   perspective: 500px;
   overflow: hidden;
 `;

@@ -21,16 +21,16 @@ export default function LoadingComponent() {
         <TypedLineComponent
           textColor="#E09690"
           typedText="Loading..."
-          animationDelay={2}
-          animationDuration={0.5}
+          animationDelay={1}
+          animationDuration={0}
           infiniteCursor={false}
         />
         <br />
         <TypedLineComponent
           textColor="#ffffff"
           typedText=">"
-          animationDelay={2.75}
-          animationDuration={0.5}
+          animationDelay={1.5}
+          animationDuration={0}
           infiniteCursor={true}
         />
       </div>

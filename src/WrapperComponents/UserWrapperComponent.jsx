@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import StarfieldBackgroundComponent from '../components/StarfieldBackgroundComponent/StarfieldBackgroundComponent';
 import NavbarComponent from '../components/NavbarComponent/NavbarComponent';
 import { Outlet } from 'react-router-dom';
 import LoadingComponent from '../components/LoadingComponent/LoadingComponent';
+import ScrollProgressComponent from '../components/ScrollProgressComponent/ScrollProgressComponent';
 
 const RootComponent = () => {
   const [loading, setLoading] = useState(true);
@@ -10,11 +11,12 @@ const RootComponent = () => {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 3000); // Remove LoadingComponent after 3 seconds max
+    }, 2000);
   }, []);
 
   return (
     <>
+      {/* <ScrollProgressComponent /> */}
       {loading ? <LoadingComponent /> : null}
       <StarfieldBackgroundComponent />
       <NavbarComponent />

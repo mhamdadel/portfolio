@@ -4,6 +4,8 @@ import {
 import AboutView from "../views/AboutView";
 import PortfolioView from "../views/PortfolioView";
 import RootComponent from "../WrapperComponents/UserWrapperComponent";
+import ContactMeView from "../views/ContactMeView";
+import SkillsView from "../views/SkillsView";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +23,18 @@ const router = createBrowserRouter([
       {
         path: "/portfolio",
         Component: PortfolioView
+      },
+      {
+        path: "/contact-me",
+        Component: ContactMeView
+      },
+      {
+        path: "/skills",
+        Component: SkillsView
+      },
+      {
+        path: "*",
+        Component: AboutView
       }
     ]
   }

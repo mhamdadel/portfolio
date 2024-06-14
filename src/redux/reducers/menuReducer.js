@@ -1,28 +1,26 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { actions } from "../actions";
-const getCurrentPage = () => {
-  const path = window.location.pathname;
-  switch (path) {
-    case "/":
-      return "About Me";
-    case "/portfolio":
-      return "Portfolio";
-    case "/projects":
-      return "Projects";
-    case "/calendar":
-      return "Calendar";
-    default:
-      return "About Me"; // Default to "About Me" if no match is found
-  }
+
+const menuItems = {
+  "/": { "name": "About Me" },
+  "/portfolio": { "name": "Portfolio" },
+  "/contact-me": { "name": "Contact Me" },
+  "/skills": { "name": "My Skills" },
 };
+
+const getCurrentPage = (menuItems) => {
+  const path = window.location.pathname;
+  
+  if (menuItems[path] === undefined) {
+    return "/";
+  }
+
+  return path;
+};
+
 const initialState = {
-  currentPage: getCurrentPage(),
-  menuItems: [
-    { name: "About Me", href: "/", current: true },
-    { name: "Portfolio", href: "/portfolio", current: false },
-    { name: "Projects", href: "#", current: false },
-    { name: "Calendar", href: "#", current: false },
-  ],
+  currentPage: getCurrentPage(menuItems),
+  menuItems
 };
 
 const weatherSlice = createSlice({
