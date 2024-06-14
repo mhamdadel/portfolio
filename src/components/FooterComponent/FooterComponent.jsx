@@ -103,7 +103,7 @@ const FooterComponent = () => {
               </div>
               <button
                 type="submit"
-                className="w-2/4 mx-44 bg-primary text-on-primary py-2 px-4 rounded-md hover:bg-error"
+                className="w-2/4 bg-primary text-on-primary py-2 px-4 rounded-md hover:bg-error"
                 onMouseMove={handleMouseMove}
                 onMouseLeave={handleMouseLeave}
               >

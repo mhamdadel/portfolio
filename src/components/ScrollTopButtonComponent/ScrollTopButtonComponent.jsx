@@ -23,8 +23,7 @@ export default function ScrollTopButtonComponent() {
     return (
     <div
         className={`fixed bottom-8 right-8 bg-primary w-12 h-12 flex items-center justify-center rounded transition-opacity duration-500 z-50 cursor-pointer ${
-        //   showButton ? 'opacity-100 visible' : 'opacity-0 invisible' 
-        "opacity-1"
+          showButton ? 'opacity-100 visible' : 'opacity-0 invisible' 
         }`}
         onClick={scrollToTop}
       >
