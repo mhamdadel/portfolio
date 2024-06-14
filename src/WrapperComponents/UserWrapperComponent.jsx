@@ -3,7 +3,9 @@ import StarfieldBackgroundComponent from '../components/StarfieldBackgroundCompo
 import NavbarComponent from '../components/NavbarComponent/NavbarComponent';
 import { Outlet } from 'react-router-dom';
 import LoadingComponent from '../components/LoadingComponent/LoadingComponent';
-import ScrollProgressComponent from '../components/ScrollProgressComponent/ScrollProgressComponent';
+// import ScrollProgressComponent from '../components/ScrollProgressComponent/ScrollProgressComponent';
+import FooterComponent from '../components/FooterComponent/FooterComponent';
+import Adkar from '../utils/adkar';
 
 const RootComponent = () => {
   const [loading, setLoading] = useState(true);
@@ -18,9 +20,11 @@ const RootComponent = () => {
     <>
       {/* <ScrollProgressComponent /> */}
       {loading ? <LoadingComponent /> : null}
+      <Adkar />
       <StarfieldBackgroundComponent />
       <NavbarComponent />
       <Outlet />
+      <FooterComponent />
     </>
   );
 };

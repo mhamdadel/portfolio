@@ -1,13 +1,12 @@
-
-button {
-    color: var(--text-primary);
-    background-color: var(--background);
-    border: 2px var(--text-primary) solid;
-    float: right;
-    transition: all .5s;
+#ChangeThemeButtonComponent button {
+  color: var(--text-primary);
+  background-color: var(--background);
+  border: 2px var(--text-primary) solid;
+  float: right;
+  transition: all .5s;
 }
 
-label {
+#ChangeThemeButtonComponent label {
   width:50px;
   height:20px;
   position: relative;
@@ -18,7 +17,7 @@ label {
   cursor: pointer;
 }
 
-label:after {
+#ChangeThemeButtonComponent label:after {
   content: "";
   width:18px;
   height: 18px;
@@ -30,26 +29,26 @@ label:after {
   box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
 }
 
-input {
+#ChangeThemeButtonComponent input {
   width: 0;
   height: 0;
   visibility: hidden;
 }
 
-input:checked + label {
+#ChangeThemeButtonComponent input:checked + label {
   background: #242424;
 }
 
-input:checked + label:after {
+#ChangeThemeButtonComponent input:checked + label:after {
   left:48px;
   transform: translateX(-100%);
   background: linear-gradient(180deg,#777,#3a3a3a);
 }
 
-label, label:after {
-  transition: 0.3s
+#ChangeThemeButtonComponent label, #ChangeThemeButtonComponent label:after {
+  transition: 0.3s;
 }
 
-label:active:after{ 
+#ChangeThemeButtonComponent label:active:after { 
   width: 26px; 
 }

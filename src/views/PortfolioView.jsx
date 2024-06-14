@@ -5,8 +5,21 @@ import SEOHelmet from "../utils/SEOHelmet";
 import contentechViewImage from "../assets/portfolio/contentech.png";
 import torjomanhViewImage from "../assets/portfolio/torjoman.png";
 import adminPanalViewImage from "../assets/portfolio/admin-panal.jpg";
-import { CardContent, Description, CardImage, CustomCursor, ImageCardContainer, Line, Point, StyledCard, StyledCardContainer, Title, containerVariants, itemVariants } from "../components/StyledComponentsForPortfolioView";
-import {  } from "@headlessui/react";
+import {
+  CardContent,
+  Description,
+  CardImage,
+  CustomCursor,
+  ImageCardContainer,
+  Line,
+  Point,
+  StyledCard,
+  StyledCardContainer,
+  Title,
+  containerVariants,
+  itemVariants,
+} from "../components/StyledComponentsForPortfolioView";
+import Adkar from "../utils/adkar";
 
 const projectsData = [
   {
@@ -63,7 +76,7 @@ export default function PortfolioView() {
           }
         });
       },
-      { threshold: .8 }
+      { threshold: 0.8 }
     );
 
     if (cardContainerRef.current) {
@@ -101,6 +114,7 @@ export default function PortfolioView() {
       variants={containerVariants}
       onMouseMove={handleMouseMove}
     >
+      {/* <Adkar /> */}
       <SEOHelmet
         title="Muhammed Adel | Portfolio"
         description="Welcome to the portfolio of Muhammed Adel. Discover my projects and skills in Full-Stack development and DevOps."
@@ -129,7 +143,11 @@ export default function PortfolioView() {
               rel="noreferrer"
               variants={itemVariants}
               initial="hidden"
-              animate={visibleItems.includes(cardContainerRef.current?.children[index]) ? "visible" : "hidden"}
+              animate={
+                visibleItems.includes(cardContainerRef.current?.children[index])
+                  ? "visible"
+                  : "hidden"
+              }
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >

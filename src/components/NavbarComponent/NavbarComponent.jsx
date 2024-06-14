@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCurrentTemperature } from "../../redux/actions/weatherActions";
-import ChangeThemeButtonComponent from "../../components/ChangeThemeButton/ChangeThemeButtonComponent";
+import ChangeThemeButtonComponent from "../ChangeThemeButtonComponent/ChangeThemeButtonComponent";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { motion, AnimatePresence } from "framer-motion";
 import NavbarItemComponent from "../../components/NavbarItemComponent/NavbarItemComponent";

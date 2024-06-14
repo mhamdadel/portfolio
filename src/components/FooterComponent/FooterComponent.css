@@ -1,0 +1,38 @@
+#FooterComponent button[type="submit"].sendButton + form.sendContact::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+  }
+  
+  #FooterComponent button[type="submit"].sendButton:hover + form.sendContact::before {
+    opacity: 1; 
+  }
+  #FooterComponent form.sendContact::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 2px;
+    background-color: black;
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  
+  #FooterComponent form.sendContact::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 2px;
+    background-color: black;
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+  

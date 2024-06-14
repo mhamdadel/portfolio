@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { toast, Bounce } from "react-toastify";
+import { toast, Bounce, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import adkar from "../data/adkar.json";
 
@@ -35,7 +35,7 @@ const Adkar = () => {
 
   return (
     <div>
-      
+      <ToastContainer />
     </div>
   );
 };

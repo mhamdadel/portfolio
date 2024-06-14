@@ -28,8 +28,8 @@ export default function AboutView() {
       animate="visible"
       variants={containerVariants}
     >
-      <Joke />
-      <Adkar />
+      {/* <Joke /> */}
+      {/* <Adkar /> */}
       <SEOHelmet
         title="Home - Muhammed Adel | About Me"
         description="Welcome to the portfolio of Muhammed Adel. Discover my projects and skills in Full-Stack development and DevOps."

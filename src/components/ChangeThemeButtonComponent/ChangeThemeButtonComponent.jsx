@@ -11,7 +11,7 @@ export default function ChangeThemeButtonComponent() {
   }, [theme]);
 
   return (
-    <div className='items-center flex'>
+    <div id='ChangeThemeButtonComponent' className='items-center flex'>
       <input type="checkbox" id="darkmode-toggle" style={{
         width: '40px',
         height: '40px',

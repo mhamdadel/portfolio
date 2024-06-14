@@ -7,6 +7,7 @@ import phoneImage from "../assets/social-media/phone.png";
 import gmailImage from "../assets/social-media/gmail.png";
 import whatsappImage from "../assets/social-media/whatsapp.png";
 import EyeComponent from "../components/EyeComonent/EyeComonent";
+import Adkar from "../utils/adkar";
 
 const StyledContainer = styled.div`
   color: var(--on-surface-color);
@@ -86,6 +87,7 @@ const CenteredEyeComponent = styled.div`
 const ContactMeView = () => {
   return (
     <StyledContainer className="bg-surface w-10/12 mx-auto">
+      {/* <Adkar /> */}
       <div className="mx-auto max-w-screen-lg">
         <ViewTitleComponent title="Contact Me" />
       </div>
@@ -109,7 +111,7 @@ const ContactMeView = () => {
         <CenteredEyeComponent>
           <EyeComponent />
         </CenteredEyeComponent>
-        
+
         <StyledLink href="mailto://muhammed.adel.elshall@gmail.com">
           <StyledLogo src={gmailImage} alt="Gmail" />
           <LogoName>Gmail</LogoName>
