@@ -28,7 +28,7 @@ const Adkar = () => {
       });
       setProphetsAdkar(adkar.prophets[Math.floor(Math.random() * adkar.prophets.length)]);
       setQuranAdkar(adkar.quran[Math.floor(Math.random() * adkar.quran.length)]);
-    }, 15000);
+    }, 70000);
 
     return () => clearInterval(intervalId);
   }, [prophetsAdkar, quranAdkar]);

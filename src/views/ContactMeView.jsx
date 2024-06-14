@@ -103,7 +103,7 @@ const ContactMeView = () => {
           <LogoName>LinkedIn</LogoName>
         </StyledLink>
 
-        <StyledLink href="https://github.com/mhamdadel">
+        <StyledLink className="bg-white" href="https://github.com/mhamdadel">
           <StyledLogo src={githubImage} alt="GitHub" />
           <LogoName>GitHub</LogoName>
         </StyledLink>
@@ -122,7 +122,7 @@ const ContactMeView = () => {
           <LogoName>Whatsapp</LogoName>
         </StyledLink>
 
-        <StyledLink href="tel:+201110894640">
+        <StyledLink className="bg-white" href="tel:+201110894640">
           <StyledLogo src={phoneImage} alt="phone" />
           <LogoName>Mobile phone</LogoName>
         </StyledLink>

@@ -25,6 +25,10 @@ export default {
         "on-info": 'var(--on-info-color)',
         text: 'var(--text-color)',
       },
+      fontSize: {
+        '13vw': '13vw',
+        '5vw': '5vw',
+      },
     },
   },
   plugins: [],

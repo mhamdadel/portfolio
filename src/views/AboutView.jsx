@@ -55,81 +55,60 @@ export default function AboutView() {
           />
         </div>
         <div className="w-full lg:w-2/3 p-5 text-container">
-          <motion.h2 variants={itemVariants} className="text-primary text-2xl">
+          <motion.h2
+            variants={itemVariants}
+            className="text-primary  lg:text-2xl"
+          >
             My story
           </motion.h2>
           <motion.h3
             variants={itemVariants}
-            className="text-on-surface text-2xl pb-5"
+            className="text-on-surface  lg:text-2xl pb-5"
           >
-            Muhammed Adel Hamed
+            Muhammed Adel
           </motion.h3>
           <motion.h3
             variants={itemVariants}
-            className="text-on-surface text-2xl pb-5"
+            className="text-on-surface lg: lg:text-2xl pb-5"
           >
-            Software Engineer at Future Group Translation Service.
+            Software Engineer
+            <br />
+            Future Group Translation Service Co.
           </motion.h3>
-          <article className="text-on-surface text-2xl pb-5">
+          <article className="text-on-surface  lg:text-2xl pb-5">
             <motion.p
               variants={itemVariants}
-              className="text-on-surface text-2xl pb-5"
+              className="text-on-surface lg:text-2xl pb-5"
             >
-              I am passionate about learning in this field, which led me to
-              leave my main field and pursue a nine-month ITI Diploma in the
-              Open Source Application Development track. I have worked on many
-              projects, both as a team member and as a team leader. Throughout
-              my career, I have developed myself in various areas, including
-              backend, frontend, and DevOps.
+              I pursued a nine-month ITI Diploma in Open Source Application
+              Development due to my passion for learning. Throughout my career,
+              I have gained experience as both a team member and leader,
+              developing skills in backend, frontend, and DevOps.
             </motion.p>
             <motion.p
               variants={itemVariants}
-              className="text-on-surface text-2xl pb-5"
+              className="text-on-surface lg:text-2xl pb-5"
             >
-              I am passionate about learning in this field, which led me to
-              leave my main field and pursue a nine-month ITI Diploma in the
-              Open Source Application Development track. I have worked on many
-              projects, both as a team member and as a team leader. Throughout
-              my career, I have developed myself in various areas, including
-              backend, frontend, and DevOps.
-            </motion.p>
-            <motion.p
-              variants={itemVariants}
-              className="text-on-surface text-2xl pb-5"
-            >
-              I am a Linux user with experience in multiple languages,
-              frameworks, and libraries. My key technical skills include:
-            </motion.p>
-            <motion.p
-              variants={itemVariants}
-              className="text-on-surface text-2xl pb-5"
-            >
+              Key skills:
+              <br />
               Backend: Java (Spring Boot, Spring Data, Spring Security, Spring
-              Cloud), PHP (Laravel), JavaScript (Express, Fastify).
+              Cloud), PHP (Laravel), JavaScript (Express, Fastify)
               <br />
-              Frontend: Javascript (Typescript), React.js, Angular, CSS3 (SCSS),
-              HTML5.
+              Frontend: JavaScript (TypeScript), React.js, Angular, CSS3 (SCSS),
+              HTML5
               <br />
-              DevOps: Docker, Kubernetes, Git, Ansible, Jenkins, Terraform.
+              DevOps: Docker, Kubernetes, Git, Ansible, Jenkins, Terraform
               <br />
-              Database: MongoDB, MySQL, Redis, elasticsearch.
+              Database: MongoDB, MySQL, Redis, Elasticsearch
             </motion.p>
             <motion.p
               variants={itemVariants}
-              className="text-on-surface text-2xl pb-5"
+              className="text-on-surface lg:text-2xl pb-5"
             >
-              In addition to my technical skills, I have studied non-technical
-              skills, such as customer interaction and agile methodologies, and
-              have taken English language courses for professional purposes.
-            </motion.p>
-            <motion.p
-              variants={itemVariants}
-              className="text-on-surface text-2xl pb-5"
-            >
-              I excel at understanding client requirements and developing
-              implementation plans accordingly. I work well in a team
-              environment, where I actively participate and benefit from the
-              skills of my colleagues.
+              Additionally, I have studied customer interaction, agile
+              methodologies, and professional English. I excel in understanding
+              client requirements, developing implementation plans, and working
+              effectively in a team environment.
             </motion.p>
           </article>
         </div>

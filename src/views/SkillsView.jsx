@@ -10,6 +10,7 @@ import {
   Title,
   Tooltip,
   Legend,
+  layouts,
 } from "chart.js";
 import { categorizedSkillsData } from "../data/skills";
 
@@ -31,13 +32,17 @@ const createChartData = (skills) => ({
       backgroundColor: skills.map((skill) => skill.color),
       borderColor: skills.map((skill) => skill.color),
       borderWidth: 1,
-      barThickness: 5, // Set bar height to 5px
+      barThickness: 5,
     },
   ],
 });
 
 const options = {
   indexAxis: "y",
+  layouts: {
+    padding: 20,
+    barThickness: 10,
+  },
   plugins: {
     legend: {
       display: false,
@@ -70,6 +75,11 @@ const options = {
       ticks: {
         display: true,
         color: "#000",
+        stepSize: 1,
+
+        font: {
+          size: "9.5vw",
+        },
       },
     },
   },
@@ -86,9 +96,9 @@ const SkillsView = () => (
     {/* <Adkar /> */}
     <ViewTitleComponent title="My Skills" />
 
-    <div className="mt- w-full break-words">
-      <h2 className="text-xl font-bold mb-4 text-center">Backend</h2>
-      <div className="w-3/4 mx-auto bg-white p-5 rounded-md shadow-md">
+    <div className="w-full break-words">
+      <h2 className="font-bold mb-4 text-center">Backend</h2>
+      <div className="w-full lg:w-3/4 mx-auto bg-white p-5 rounded-md shadow-md">
         <Bar
           data={createChartData(categorizedSkillsData.backend)}
           options={options}
@@ -97,9 +107,10 @@ const SkillsView = () => (
     </div>
 
     <div className="mt-8 w-full break-words">
-      <h2 className="text-xl font-bold mb-4 text-center">Frontend</h2>
-      <div className="w-3/4 mx-auto bg-white p-5 rounded-md shadow-md">
+      <h2 className="font-bold mb-4 text-center">Frontend</h2>
+      <div className="w-full lg:w-3/4 mx-auto bg-white p-5 rounded-md shadow-md">
         <Bar
+          className="font-5vw lg:font-13vw"
           data={createChartData(categorizedSkillsData.frontend)}
           options={options}
         />
@@ -107,8 +118,8 @@ const SkillsView = () => (
     </div>
 
     <div className="mt-8 w-full break-words">
-      <h2 className="text-xl font-bold mb-4 text-center">Databases</h2>
-      <div className="w-3/4 mx-auto bg-white p-5 rounded-md shadow-md">
+      <h2 className="font-bold mb-4 text-center">Databases</h2>
+      <div className="w-full lg:w-3/4 mx-auto bg-white p-5 rounded-md shadow-md">
         <Bar
           data={createChartData(categorizedSkillsData.databases)}
           options={options}
@@ -117,8 +128,8 @@ const SkillsView = () => (
     </div>
 
     <div className="mt-8 w-full break-words">
-      <h2 className="text-xl font-bold mb-4 text-center">DevOps</h2>
-      <div className="w-3/4 mx-auto bg-white p-5 rounded-md shadow-md">
+      <h2 className="font-bold mb-4 text-center">DevOps</h2>
+      <div className="w-full lg:w-3/4 mx-auto bg-white p-5 rounded-md shadow-md">
         <Bar
           data={createChartData(categorizedSkillsData.devops)}
           options={options}
@@ -127,8 +138,8 @@ const SkillsView = () => (
     </div>
 
     <div className="mt-8 w-full break-words">
-      <h2 className="text-xl font-bold mb-4 text-center">Web Technologies</h2>
-      <div className="w-3/4 mx-auto bg-white p-5 rounded-md shadow-md">
+      <h2 className="font-bold mb-4 text-center">Web Technologies</h2>
+      <div className="w-full lg:w-3/4 mx-auto bg-white p-5 rounded-md shadow-md">
         <Bar
           data={createChartData(categorizedSkillsData.webTech)}
           options={options}
@@ -137,8 +148,8 @@ const SkillsView = () => (
     </div>
 
     <div className="mt-8 w-full break-words">
-      <h2 className="text-xl font-bold mb-4 text-center">Other Skills</h2>
-      <div className="w-3/4 mx-auto bg-white p-5 rounded-md shadow-md">
+      <h2 className="font-bold mb-4 text-center">Other Skills</h2>
+      <div className="w-full lg:w-3/4 mx-auto bg-white p-5 rounded-md shadow-md">
         <Bar
           data={createChartData(categorizedSkillsData.other)}
           options={options}

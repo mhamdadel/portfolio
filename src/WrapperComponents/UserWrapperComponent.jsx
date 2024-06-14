@@ -6,6 +6,7 @@ import LoadingComponent from '../components/LoadingComponent/LoadingComponent';
 // import ScrollProgressComponent from '../components/ScrollProgressComponent/ScrollProgressComponent';
 import FooterComponent from '../components/FooterComponent/FooterComponent';
 import Adkar from '../utils/adkar';
+import ScrollTopButtonComponent from '../components/ScrollTopButtonComponent/ScrollTopButtonComponent';
 
 const RootComponent = () => {
   const [loading, setLoading] = useState(true);
@@ -21,6 +22,7 @@ const RootComponent = () => {
       {/* <ScrollProgressComponent /> */}
       {loading ? <LoadingComponent /> : null}
       <Adkar />
+      <ScrollTopButtonComponent />
       <StarfieldBackgroundComponent />
       <NavbarComponent />
       <Outlet />

@@ -45,7 +45,14 @@
   --on-success-color: #ffffff;
   --on-info-color: #ffffff;
   --text-color: #000000;
+  --font-bar-size: 12vw;
   overflow-y: auto;
+}
+
+@media screen and (max-width: 640px) {
+  :root {
+    --font-bar-size: 5vw;
+  }
 }
 
 * {
@@ -76,11 +83,14 @@
   --text-color: #ffffff;
 }
 
-body, h1, p {
+html,
+body,
+h1,
+p {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow: auto;
+  /* overflow: auto; */
 }
 
 /* Base styles */
