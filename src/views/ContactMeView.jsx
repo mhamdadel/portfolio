@@ -7,7 +7,7 @@ import phoneImage from "../assets/social-media/phone.png";
 import gmailImage from "../assets/social-media/gmail.png";
 import whatsappImage from "../assets/social-media/whatsapp.png";
 import EyeComponent from "../components/EyeComonent/EyeComonent";
-import Adkar from "../utils/adkar";
+import SEOHelmet from "../utils/SEOHelmet";
 
 const StyledContainer = styled.div`
   color: var(--on-surface-color);
@@ -87,6 +87,12 @@ const CenteredEyeComponent = styled.div`
 const ContactMeView = () => {
   return (
     <StyledContainer className="bg-surface w-10/12 mx-auto">
+      
+      <SEOHelmet
+        title="Muhammed Adel | Contact Me"
+        description="Welcome to the portfolio of Muhammed Adel. Discover my projects and skills in Full-Stack development and DevOps."
+        keywords="Muhammed Adel, Home, Portfolio, DevOps, Full-Stack"
+      />
       {/* <Adkar /> */}
       <div className="mx-auto max-w-screen-lg">
         <ViewTitleComponent title="Contact Me" />

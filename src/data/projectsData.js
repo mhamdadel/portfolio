@@ -63,14 +63,14 @@ const projectsData = [
     {
       imageUrl: aqaryImage,
       title: "Aqary real state project",
-      description: "sample site for a lab in ITI",
+      description: "real state project using MERN Stack",
       link: "https://aqary-eg.web.app/",
       details: ["- contact form", "- register form", "- login form"],
       keywords: [
         "CSS3",
         "HTML5",
         "Tailwindcss",
-        "Angular",
+        "React",
         "Nodejs",
         "MongoDB",
         "Expressjs",
@@ -79,14 +79,14 @@ const projectsData = [
     {
       imageUrl: meanProjectImage,
       title: "MEAN Stack Projet",
-      description: "sample site for a lab in ITI",
-      link: "https://mhamdadel.github.io/html-css-project/",
-      details: ["- contact form", "- register form", "- login form"],
+      description: "Book Store project using MEAN Stack",
+      link: "https://github.com/Omar3ain/backend-MeanStack-project",
+      details: [],
       keywords: [
         "CSS3",
         "HTML5",
         "Tailwindcss",
-        "React",
+        "Angular",
         "Nodejs",
         "Expressjs",
         "MongoDB",
@@ -97,7 +97,7 @@ const projectsData = [
       title: "MAdmin Nodejs Package",
       description: "admin management npm package manager for nodejs",
       link: "https://www.npmjs.com/package/@muhammedadel/madmin",
-      details: ["- contact form", "- register form", "- login form"],
+      details: [],
       keywords: [
         "Api",
         "Npm",
@@ -151,7 +151,7 @@ const projectsData = [
       title: "example css&html4 site",
       description: "sample site for a lab in ITI",
       link: "https://mhamdadel.github.io/html-css-project/",
-      details: ["- contact form", "- register form", "- login form"],
+      details: [],
       keywords: [
         "CSS",
         "HTML4",

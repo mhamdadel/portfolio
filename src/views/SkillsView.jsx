@@ -10,9 +10,9 @@ import {
   Title,
   Tooltip,
   Legend,
-  layouts,
 } from "chart.js";
 import { categorizedSkillsData } from "../data/skills";
+import SEOHelmet from "../utils/SEOHelmet";
 
 ChartJS.register(
   BarElement,
@@ -93,7 +93,12 @@ const SkillsView = () => (
     animate="visible"
     variants={containerVariants}
   >
-    {/* <Adkar /> */}
+    
+    <SEOHelmet
+        title="Muhammed Adel | My Skills"
+        description="Welcome to the portfolio of Muhammed Adel. Discover my projects and skills in Full-Stack development and DevOps."
+        keywords="Muhammed Adel, Home, Portfolio, DevOps, Full-Stack"
+      />
     <ViewTitleComponent title="My Skills" />
 
     <div className="w-full break-words">
