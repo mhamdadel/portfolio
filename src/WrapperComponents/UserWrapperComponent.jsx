@@ -5,7 +5,7 @@ import { Outlet } from 'react-router-dom';
 import LoadingComponent from '../components/LoadingComponent/LoadingComponent';
 // import ScrollProgressComponent from '../components/ScrollProgressComponent/ScrollProgressComponent';
 import FooterComponent from '../components/FooterComponent/FooterComponent';
-import Adkar from '../utils/adkar';
+import Adkar from '../utils/Adkar';
 import ScrollTopButtonComponent from '../components/ScrollTopButtonComponent/ScrollTopButtonComponent';
 
 const RootComponent = () => {

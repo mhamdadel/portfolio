@@ -4,6 +4,7 @@ import {
 import AboutView from "../views/AboutView";
 import PortfolioView from "../views/PortfolioView";
 import RootComponent from "../WrapperComponents/UserWrapperComponent";
+import ErrorNotFoundedComponent from "../components/ErrorNotFoundedComponent/ErrorNotFoundedComponent";
 import ContactMeView from "../views/ContactMeView";
 import SkillsView from "../views/SkillsView";
 
@@ -34,7 +35,7 @@ const router = createBrowserRouter([
       },
       {
         path: "*",
-        Component: AboutView
+        Component: ErrorNotFoundedComponent
       }
     ]
   }

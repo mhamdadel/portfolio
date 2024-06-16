@@ -161,6 +161,17 @@ const SkillsView = () => (
         />
       </div>
     </div>
+
+    
+    <div className="mt-8 w-full break-words">
+      <h2 className="font-bold mb-4 text-center">I have some knowledge </h2>
+      <div className="w-full lg:w-3/4 mx-auto bg-white p-5 rounded-md shadow-md">
+        <Bar
+          data={createChartData(categorizedSkillsData.knowledge)}
+          options={options}
+        />
+      </div>
+    </div>
   </motion.main>
 );
 

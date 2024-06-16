@@ -108,24 +108,24 @@
 
 @-webkit-keyframes type {
   to {
-    width: 25em;
+    width: 29em;
   }
 }
 
 @-moz-keyframes type {
   to {
-    width: 25em;
+    width: 29em;
   }
 }
 
 @-o-keyframes type {
   to {
-    width: 25em;
+    width: 29em;
   }
 }
 
 @keyframes type {
   to {
-    width: 25em;
+    width: 29em;
   }
 }

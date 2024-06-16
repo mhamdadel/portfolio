@@ -23,7 +23,7 @@ const Adkar = () => {
         draggable: true,
         progress: undefined,
         rtl: true,
-        theme: "colored",
+        theme: (localStorage.getItem("theme").replaceAll('"', "") === "dark" ? "light" : "dark") || "colored",
         transition: Bounce,
       });
       setProphetsAdkar(adkar.prophets[Math.floor(Math.random() * adkar.prophets.length)]);
