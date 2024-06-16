@@ -27,7 +27,7 @@ export default function ScrollTopButtonComponent() {
         }`}
         onClick={scrollToTop}
       >
-        <ChevronUpIcon className="w-6 h-6 text-white" />
+        <ChevronUpIcon className="animate-bounce w-6 h-6 text-white" />
       </div>
     );
 

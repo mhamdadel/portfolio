@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
 import "./FooterComponent.css";
+import Swal from "sweetalert2";
 
 const FooterComponent = () => {
   const [formData, setFormData] = useState({
@@ -16,6 +17,12 @@ const FooterComponent = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     toast("منا قلت لك مش شغالة =)");
+    Swal.fire({
+      icon: "error",
+      title: "This Future will Coming Soon!",
+      text: "Please go to contact page and contact me with many ways!",
+      footer: '<a style="font-weight: bold; font-size: 1.5rem; color: var(--info-color);" href="/contact-me">Contact Me</a>'
+    });
   };
 
   const handleMouseMove = (e) => {
@@ -32,8 +39,8 @@ const FooterComponent = () => {
     const moveX = -((offsetX - centerX) / centerX * maxOffset);
     const moveY = -((offsetY - centerY) / centerY * maxOffset);
     const moveZ = -(Math.sqrt(moveX * moveX + moveY * moveY));
+    button.style.transform = `translate3d(${moveX}px, ${moveY}px, ${moveZ}px) rotateY(${moveX / 10}deg) rotateX(${moveY / 10}deg) rotateZ(${moveZ / 10}deg)`;
 
-    button.style.transform = `translate3d(${moveX}px, ${moveY}px, ${moveZ}px)`;
   };
 
   const handleMouseLeave = (e) => {
@@ -64,7 +71,6 @@ const FooterComponent = () => {
                   value={formData.name}
                   onChange={handleChange}
                   className="w-full p-2 border border-gray-300 rounded-md"
-                  required
                 />
               </div>
               <div>
@@ -81,7 +87,6 @@ const FooterComponent = () => {
                   value={formData.email}
                   onChange={handleChange}
                   className="w-full p-2 border border-gray-300 rounded-md"
-                  required
                 />
               </div>
               <div>
@@ -98,12 +103,12 @@ const FooterComponent = () => {
                   onChange={handleChange}
                   className="w-full p-2 border border-gray-300 rounded-md"
                   rows="4"
-                  required
                 />
               </div>
               <button
                 type="submit"
-                className="w-2/4 bg-primary text-on-primary py-2 px-4 rounded-md hover:bg-error"
+                className="w-2/4 bg-primary text-on-primary py-2 px-4 rounded-md hover:bg-error transition-transform"
+                
                 onMouseMove={handleMouseMove}
                 onMouseLeave={handleMouseLeave}
               >
