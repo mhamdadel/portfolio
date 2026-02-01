@@ -1,178 +1,106 @@
+import { useState } from "react";
 import ViewTitleComponent from "../components/ViewTitleComponent/ViewTitleComponent";
 import { containerVariants } from "../components/StyledComponentsForPortfolioView";
-import { motion } from "framer-motion";
-import { Bar } from "react-chartjs-2";
-import {
-  Chart as ChartJS,
-  BarElement,
-  CategoryScale,
-  LinearScale,
-  Title,
-  Tooltip,
-  Legend,
-} from "chart.js";
+import { motion, AnimatePresence } from "framer-motion";
 import { categorizedSkillsData } from "../data/skills";
 import SEOHelmet from "../utils/SEOHelmet";
 
-ChartJS.register(
-  BarElement,
-  CategoryScale,
-  LinearScale,
-  Title,
-  Tooltip,
-  Legend
+const SkillBar = ({ skill }) => (
+  <div className="mb-4">
+    <div className="flex justify-between mb-1">
+      <span className="text-base font-medium text-primary dark:text-white">
+        {skill.type}
+      </span>
+      <span className="text-sm font-medium text-primary dark:text-white">
+        {skill.level}%
+      </span>
+    </div>
+    <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+      <motion.div
+        className="h-2.5 rounded-full"
+        style={{ backgroundColor: skill.color }}
+        initial={{ width: 0 }}
+        animate={{ width: `${skill.level}%` }}
+        transition={{ duration: 1, ease: "easeOut" }}
+      ></motion.div>
+    </div>
+  </div>
 );
 
-const createChartData = (skills) => ({
-  labels: skills.map((skill) => skill.type),
-  datasets: [
-    {
-      label: "Skill Level",
-      data: skills.map((skill) => skill.level),
-      backgroundColor: skills.map((skill) => skill.color),
-      borderColor: skills.map((skill) => skill.color),
-      borderWidth: 1,
-      barThickness: 5,
-    },
-  ],
-});
-
-const options = {
-  indexAxis: "y",
-  layouts: {
-    padding: 20,
-    barThickness: 10,
-  },
-  plugins: {
-    legend: {
-      display: false,
-    },
-    tooltip: {
-      callbacks: {
-        label: function (context) {
-          return `${context.label}: ${context.raw}%`;
-        },
-      },
-    },
-  },
-  scales: {
-    x: {
-      beginAtZero: true,
-      max: 100,
-      grid: {
-        display: false,
-        drawBorder: false,
-      },
-      ticks: {
-        display: false,
-      },
-    },
-    y: {
-      grid: {
-        display: false,
-        drawBorder: false,
-      },
-      ticks: {
-        display: true,
-        color: "#000",
-        stepSize: 1,
-
-        font: {
-          size: "9.5vw",
-        },
-      },
-    },
-  },
-};
-
-const SkillsView = () => (
-  <motion.main
-    className="mx-auto p-5 bg-surface text-on-surface flex flex-col items-center"
-    style={{ minHeight: "100vh", width: "80vw" }}
-    initial="hidden"
-    animate="visible"
-    variants={containerVariants}
+const TabButton = ({ isActive, label, onClick }) => (
+  <button
+    onClick={onClick}
+    className={`px-4 py-2 mr-2 mb-2 text-sm font-medium rounded-lg transition-all duration-300 focus:outline-none ${
+      isActive
+        ? "bg-primary text-on-primary ring-2 ring-primary ring-opacity-50"
+        : "bg-surface text-on-surface hover:bg-gray-100 hover:text-primary"
+    }`}
   >
-    
-    <SEOHelmet
+    {label}
+  </button>
+);
+
+const SkillsView = () => {
+  const [activeTab, setActiveTab] = useState("backend");
+
+  const tabs = [
+    { id: "backend", label: "Backend" },
+    { id: "frontend", label: "Frontend" },
+    { id: "databases", label: "Databases" },
+    { id: "devops", label: "DevOps" },
+    { id: "engineeringPractices", label: "Practices" },
+  ];
+
+  return (
+    <motion.main
+      className="mx-auto p-5 bg-surface text-on-surface flex flex-col items-center"
+      style={{ minHeight: "100vh", width: "80vw" }}
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+    >
+      <SEOHelmet
         title="Muhammed Adel | My Skills"
         description="Welcome to the portfolio of Muhammed Adel. Discover my projects and skills in Full-Stack development and DevOps."
         keywords="Muhammed Adel, Home, Portfolio, DevOps, Full-Stack"
       />
-    <ViewTitleComponent title="My Skills" />
+      <ViewTitleComponent title="My Skills" />
 
-    <div className="w-full break-words">
-      <h2 className="font-bold mb-4 text-center">Backend</h2>
-      <div className="w-full lg:w-3/4 mx-auto bg-white p-5 rounded-md shadow-md">
-        <Bar
-          data={createChartData(categorizedSkillsData.backend)}
-          options={options}
-        />
+      {/* Tabs Navigation */}
+      <div className="flex flex-wrap justify-center mb-8">
+        {tabs.map((tab) => (
+          <TabButton
+            key={tab.id}
+            isActive={activeTab === tab.id}
+            label={tab.label}
+            onClick={() => setActiveTab(tab.id)}
+          />
+        ))}
       </div>
-    </div>
 
-    <div className="mt-8 w-full break-words">
-      <h2 className="font-bold mb-4 text-center">Frontend</h2>
-      <div className="w-full lg:w-3/4 mx-auto bg-white p-5 rounded-md shadow-md">
-        <Bar
-          className="font-5vw lg:font-13vw"
-          data={createChartData(categorizedSkillsData.frontend)}
-          options={options}
-        />
+      {/* Skills Content */}
+      <div className="w-full lg:w-3/4 mx-auto bg-white/50 backdrop-blur-sm p-6 rounded-xl shadow-lg min-h-[400px]">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeTab}
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 20 }}
+            transition={{ duration: 0.3 }}
+          >
+            <h2 className="text-2xl font-bold mb-6 text-center capitalize text-primary">
+              {tabs.find((t) => t.id === activeTab)?.label} Skills
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+              {categorizedSkillsData[activeTab]?.map((skill, index) => (
+                <SkillBar key={index} skill={skill} />
+              ))}
+            </div>
+          </motion.div>
+        </AnimatePresence>
       </div>
-    </div>
-
-    <div className="mt-8 w-full break-words">
-      <h2 className="font-bold mb-4 text-center">Databases</h2>
-      <div className="w-full lg:w-3/4 mx-auto bg-white p-5 rounded-md shadow-md">
-        <Bar
-          data={createChartData(categorizedSkillsData.databases)}
-          options={options}
-        />
-      </div>
-    </div>
-
-    <div className="mt-8 w-full break-words">
-      <h2 className="font-bold mb-4 text-center">DevOps</h2>
-      <div className="w-full lg:w-3/4 mx-auto bg-white p-5 rounded-md shadow-md">
-        <Bar
-          data={createChartData(categorizedSkillsData.devops)}
-          options={options}
-        />
-      </div>
-    </div>
-
-    <div className="mt-8 w-full break-words">
-      <h2 className="font-bold mb-4 text-center">Web Technologies</h2>
-      <div className="w-full lg:w-3/4 mx-auto bg-white p-5 rounded-md shadow-md">
-        <Bar
-          data={createChartData(categorizedSkillsData.webTech)}
-          options={options}
-        />
-      </div>
-    </div>
-
-    <div className="mt-8 w-full break-words">
-      <h2 className="font-bold mb-4 text-center">Other Skills</h2>
-      <div className="w-full lg:w-3/4 mx-auto bg-white p-5 rounded-md shadow-md">
-        <Bar
-          data={createChartData(categorizedSkillsData.other)}
-          options={options}
-        />
-      </div>
-    </div>
-
-    
-    <div className="mt-8 w-full break-words">
-      <h2 className="font-bold mb-4 text-center">I have some knowledge </h2>
-      <div className="w-full lg:w-3/4 mx-auto bg-white p-5 rounded-md shadow-md">
-        <Bar
-          data={createChartData(categorizedSkillsData.knowledge)}
-          options={options}
-        />
-      </div>
-    </div>
-  </motion.main>
-);
+    </motion.main>
+  );
+};
 
 export default SkillsView;

@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
 import { setCurrentPage } from "../../redux/actions";
 
-// eslint-disable-next-line react/prop-types, react/display-name
+// eslint-disable-next-line react/display-name
 const NavbarItemComponent = memo(({ item }) => {
   const dispatch = useDispatch();
   const location = useLocation();

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./TypedLineComponent.css";
 
-// eslint-disable-next-line react/prop-types
+ 
 export default function TypedLineComponent({
   textColor,
   typedText,
@@ -13,7 +13,7 @@ export default function TypedLineComponent({
   const [cursorVisible, setCursorVisible] = useState(true);
 
   useEffect(() => {
-    // eslint-disable-next-line react/prop-types
+     
     const duration = (animationDuration || 0) + typedText.length * 0.03;
     setAnimationTime(duration);
   }, [animationDelay, animationDuration, typedText]);

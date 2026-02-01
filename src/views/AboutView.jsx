@@ -5,6 +5,7 @@ import SEOHelmet from "../utils/SEOHelmet";
 import "react-toastify/dist/ReactToastify.min.css";
 // import Joke from "../utils/Joke";
 // import Adkar from "../utils/adkar";
+import experienceData from "../data/experienceData";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -59,58 +60,40 @@ export default function AboutView() {
             variants={itemVariants}
             className="text-primary  lg:text-2xl"
           >
-            My story
+            Professional Summary
           </motion.h2>
-          <motion.h3
+          <motion.div
             variants={itemVariants}
-            className="text-on-surface  lg:text-2xl pb-5"
+            className="text-on-surface lg:text-xl pb-5"
           >
-            Muhammed Adel
-          </motion.h3>
-          <motion.h3
+            <p className="mb-4">
+              Senior-ready Software Engineer with 3+ years of hands-on experience building scalable backend and full-stack solutions using Java Spring Boot, Node.js, PHP Laravel, and React. Worked on enterprise systems including Vodafone Germany and Future Group. Strong focus on microservices, distributed systems, DevOps practices, clean architecture, and high-quality code. Certified MongoDB Developer with excellent problem-solving skills and ownership mentality.
+            </p>
+          </motion.div>
+
+          <motion.h2
             variants={itemVariants}
-            className="text-on-surface lg: lg:text-2xl pb-5"
+            className="text-primary lg:text-2xl mt-8 mb-4"
           >
-            Software Engineer
-            <br />
-            Future Group Translation Service Co.
-          </motion.h3>
-          <article className="text-on-surface  lg:text-2xl pb-5">
-            <motion.p
-              variants={itemVariants}
-              className="text-on-surface lg:text-2xl pb-5"
-            >
-              I pursued a nine-month ITI Diploma in Open Source Application
-              Development due to my passion for learning. Throughout my career,
-              I have gained experience as both a team member and leader,
-              developing skills in backend, frontend, and DevOps.
-            </motion.p>
-            <motion.p
-              variants={itemVariants}
-              className="text-on-surface lg:text-2xl pb-5"
-            >
-              Key skills:
-              <br />
-              Backend: Java (Spring Boot, Spring Data, Spring Security, Spring
-              Cloud), PHP (Laravel), JavaScript (Express, Fastify)
-              <br />
-              Frontend: JavaScript (TypeScript), React.js, Angular, CSS3 (SCSS),
-              HTML5
-              <br />
-              DevOps: Docker, Kubernetes, Git, Ansible, Jenkins, Terraform
-              <br />
-              Database: MongoDB, MySQL, Redis, Elasticsearch
-            </motion.p>
-            <motion.p
-              variants={itemVariants}
-              className="text-on-surface lg:text-2xl pb-5"
-            >
-              Additionally, I have studied customer interaction, agile
-              methodologies, and professional English. I excel in understanding
-              client requirements, developing implementation plans, and working
-              effectively in a team environment.
-            </motion.p>
-          </article>
+            Work Experience
+          </motion.h2>
+
+          <motion.div variants={itemVariants} className="space-y-8">
+            {experienceData.map((exp, index) => (
+              <div key={index} className="border-l-2 border-primary pl-4">
+                <h3 className="text-on-surface font-bold text-xl">{exp.title}</h3>
+                <h4 className="text-secondary text-lg">{exp.company}</h4>
+                <p className="text-sm text-gray-400 mb-2">
+                  {exp.date} | {exp.type}
+                </p>
+                <ul className="list-disc list-inside text-on-surface opacity-90">
+                  {exp.details.map((detail, idx) => (
+                    <li key={idx} className="mb-1">{detail}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </motion.div>
         </div>
       </article>
     </motion.main>
